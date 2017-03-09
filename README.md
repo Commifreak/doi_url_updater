@@ -1,5 +1,14 @@
 # doi_url_updater
-This tool updates DOIs hosted at DataCite.
+This tool can update a set of DOI-URLs.
+
+Example:
+
+You site moved and you want to update ALL your DataCite DOI's. If so: This tool is for you!
+
+It uses DataCite API to update DOI's like this:
+
+From: `http://mysite/view/1234`
+To: `http://myNEWsite/view/1234`
 
 # How to use this tool?
 1. Copy the script to an server with PHP (tested: PHP 5.5/5.6)
