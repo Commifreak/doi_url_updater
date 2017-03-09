@@ -3,7 +3,7 @@ This tool can update a set of DOI-URLs.
 
 Example:
 
-You site moved and you want to update ALL your DataCite DOI's. If so: This tool is for you!
+Your site moved and you want to update ALL your DataCite DOI's. If so: This tool is for you!
 
 It uses DataCite API to update DOI's like this:
 
