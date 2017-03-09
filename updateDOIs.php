@@ -27,6 +27,7 @@ $OLDDOMAIN = "http://my.old.domain";
 $NEWDOMAIN = "https://my.new.domain.also.with.https";
 
 // Should I ignore some DOIs? comma separated.
+// Set to null if no DOIs should be ignored.
 $IGNOREDOI = array('12.3456/DOIUPDATER');
 
 
@@ -63,11 +64,13 @@ foreach($doiList as $doi) {
 	echo $i." / ".count($doiList).": =====================================> ".$doi." <===================================== ".PHP_EOL.PHP_EOL;
 	
 	$skipThisDOI = false;
-	foreach($IGNOREDOI as $ignore) {
-		if(strpos($doi, $ignore) !== false) {
-			echo "This DOI (or a part of it) should be ignored! (".$doi." <=> ".$ignore."), skipping...".PHP_EOL;
-			#sleep(5);
-			$skipThisDOI = true;
+	if(!is_null($IGNOREDOI)) {
+		foreach($IGNOREDOI as $ignore) {
+			if(strpos($doi, $ignore) !== false) {
+				echo "This DOI (or a part of it) should be ignored! (".$doi." <=> ".$ignore."), skipping...".PHP_EOL;
+				#sleep(5);
+				$skipThisDOI = true;
+			}
 		}
 	}
 	if($skipThisDOI)
